@@ -30,15 +30,16 @@ app.use((req, res, next) => {
   });
   next();
 });
-app.use((req, res, next) => {
-  res.render('maintenance');
-});
+//Site is under construction:
+// app.use((req, res, next) => {
+//   res.render('maintenance');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req,res) => {
   res.render('home', {
-    title: 'Home Page',
+    title: 'Home',
     message: 'Thank\'s for visiting!'
   });
 });
@@ -46,6 +47,13 @@ app.get('/', (req,res) => {
 app.get('/about', (req,res) => {
   res.render('about', {
     title: 'About Page'
+  });
+});
+
+app.get('/projects', (req,res) => {
+  res.render('projects', {
+    title: 'Projects',
+    message: 'These are my projects'
   });
 });
 
